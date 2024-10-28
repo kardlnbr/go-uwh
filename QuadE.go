@@ -1,23 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func QuadA(x, y int) {
+func QuadE(x, y int) {
 	var result rune
 	for i := 1; i <= y; i++ {
 		for j := 1; j <= x; j++ {
-			if (i == 1 && j == 1) || (j == 5 && i == 3) {
-				result = 'A'
-			} else if i == 5 && j == 1 {
+			if (i == 1 && j == x) || (i == y && j == 1) {
 				result = 'C'
-			} else if (i == 1 && j == x) || (i == y && j == 1) {
-				result = 'C'
-			} else if i == 1 || i == y {
-				result = 'B'
-			} else if j == 1 || j == x {
-				result = 'B'
-			} else if j == 5 && i == 3 {
+			} else if (i == 1 && j == 1) || (i == y && j == x) {
 				result = 'A'
+			} else if j == 1 || j == x || i == 1 || i == y {
+				result = 'B'
 			} else {
 				result = ' '
 			}
@@ -25,9 +21,9 @@ func QuadA(x, y int) {
 		}
 		fmt.Println()
 	}
-
 }
 
 func main() {
-	QuadA(1, 5)
+	QuadE(5, 3)
 }
+
