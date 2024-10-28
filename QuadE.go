@@ -6,7 +6,7 @@ func QuadA(x, y int) {
 	var result rune
 	for i := 1; i <= y; i++ {
 		for j := 1; j <= x; j++ {
-			if i == 1 && j == 1 {
+			if (i == 1 && j == 1) || (j == 5 && i == 3) {
 				result = 'A'
 			} else if i == 5 && j == 1 {
 				result = 'C'
@@ -16,6 +16,8 @@ func QuadA(x, y int) {
 				result = 'B'
 			} else if j == 1 || j == x {
 				result = 'B'
+			} else if j == 5 && i == 3 {
+				result = 'A'
 			} else {
 				result = ' '
 			}
@@ -27,5 +29,5 @@ func QuadA(x, y int) {
 }
 
 func main() {
-	QuadA(5, 3)
+	QuadA(1, 5)
 }
